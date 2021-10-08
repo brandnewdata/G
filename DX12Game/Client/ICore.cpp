@@ -3,6 +3,7 @@
 
 void ICore::Init()
 {
+	EngineLibLinkTest();
 }
 
 void ICore::Update()

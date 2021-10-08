@@ -42,14 +42,21 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 
     MSG msg;
 
-    // 기본 메시지 루프입니다:
-    while (GetMessage(&msg, nullptr, 0, 0))
+
+    while (true)
     {
-        if (!TranslateAccelerator(msg.hwnd, hAccelTable, &msg))
-        {
-            TranslateMessage(&msg);
-            DispatchMessage(&msg);
-        }
+        // @ PeekMessage() 함수 : 메시지 큐에 메시지가 있으면 꺼내오고 없으면 바로 반환합니다.
+		// @ PM_REMOVE : 메시지를 사용하고 지움. 
+        if (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE))	
+		{
+            if (msg.message == WM_QUIT)
+                break;
+            if (!TranslateAccelerator(msg.hwnd, hAccelTable, &msg))
+            {
+                TranslateMessage(&msg);	// 메시지를 적절한 형태로 가공합니다.
+                DispatchMessage(&msg);   // 메시지 따라서 지정된 처리를 합니다.
+            }
+		}
     }
 
     return (int) msg.wParam;

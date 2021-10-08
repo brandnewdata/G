@@ -43,5 +43,3 @@ using Vec2		= XMFLOAT2;
 using Vec3		= XMFLOAT2;
 using Vec4		= XMFLOAT2;
 using Matrix	= XMMATRIX;
-
-void EngineLibLinkTest();

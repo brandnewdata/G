@@ -15,9 +15,18 @@
     <ClCompile Include="pch.cpp">
       <Filter>Utils</Filter>
     </ClCompile>
+    <ClCompile Include="EnginePch.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="EnginePch.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="d3dx12.h">
       <Filter>Utils</Filter>
     </ClInclude>
   </ItemGroup>

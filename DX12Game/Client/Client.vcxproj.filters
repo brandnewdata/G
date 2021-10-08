@@ -32,6 +32,9 @@
     <ClInclude Include="Client.h">
       <Filter>Sources</Filter>
     </ClInclude>
+    <ClInclude Include="ICore.h">
+      <Filter>Sources\Game</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -39,6 +42,9 @@
     </ClCompile>
     <ClCompile Include="Client.cpp">
       <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="ICore.cpp">
+      <Filter>Sources\Game</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

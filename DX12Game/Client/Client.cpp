@@ -4,6 +4,9 @@
 #include "pch.h"
 #include "framework.h"
 #include "Client.h"
+#include "ICore.h"
+
+using namespace std;
 
 #define MAX_LOADSTRING 100
 
@@ -43,6 +46,9 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 
     MSG msg;
 
+    // unique_ptr은 pch에 있는 memory헤더가 필요합니다.
+    unique_ptr<ICore> Core = make_unique<ICore>();
+    Core->Init();
 
     while (true)
     {
@@ -58,6 +64,9 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
                 DispatchMessage(&msg);   // 메시지 따라서 지정된 처리를 합니다.
             }
 		}
+
+        // TODO : 게임 로직
+        Core->Update();
     }
 
     return (int) msg.wParam;

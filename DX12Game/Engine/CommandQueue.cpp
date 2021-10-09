@@ -4,9 +4,9 @@
 
 void CommandQueue::Init(ComPtr<ID3D12Device> device)
 {
-	// 커맨드 큐 스펙설정
-	D3D12_COMMAND_QUEUE_DESC CommandQueueDesc;
-	::ZeroMemory(&CommandQueueDesc, sizeof(D3D12_COMMAND_QUEUE_DESC));
+	// 커맨드 큐 스펙설정 // msdn에서 초기화한 방식. c++ 최식 스펙이란 연관있음.
+	D3D12_COMMAND_QUEUE_DESC CommandQueueDesc = {};
+	// ::ZeroMemory(&CommandQueueDesc, sizeof(D3D12_COMMAND_QUEUE_DESC)); // 전통적인 메모리 초기화 방식
 	CommandQueueDesc.Flags = D3D12_COMMAND_QUEUE_FLAG_NONE;
 	CommandQueueDesc.Type = D3D12_COMMAND_LIST_TYPE_DIRECT;
 

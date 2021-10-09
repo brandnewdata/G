@@ -7,6 +7,12 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Client", "Client\Client.vcx
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Engine", "Engine\Engine.vcxproj", "{3FB15659-7919-430D-B4E4-EBE6119A310E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Refs", "Refs", "{0DDE7855-21D6-4E4B-8343-BBED870CAA8F}"
+	ProjectSection(SolutionItems) = preProject
+		Engine\CGameFramework.cpp = Engine\CGameFramework.cpp
+		Engine\CGameFramework.h = Engine\CGameFramework.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64

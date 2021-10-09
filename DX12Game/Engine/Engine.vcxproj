@@ -163,12 +163,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CommandQueue.h" />
     <ClInclude Include="d3dx12.h" />
     <ClInclude Include="Dx12Device.h" />
     <ClInclude Include="EnginePch.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CommandQueue.cpp" />
     <ClCompile Include="Dx12Device.cpp" />
     <ClCompile Include="EnginePch.cpp" />
     <ClCompile Include="pch.cpp">

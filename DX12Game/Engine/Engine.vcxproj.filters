@@ -21,6 +21,9 @@
     <ClCompile Include="Dx12Device.cpp">
       <Filter>Engine</Filter>
     </ClCompile>
+    <ClCompile Include="CommandQueue.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -33,6 +36,9 @@
       <Filter>Utils</Filter>
     </ClInclude>
     <ClInclude Include="Dx12Device.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="CommandQueue.h">
       <Filter>Engine</Filter>
     </ClInclude>
   </ItemGroup>

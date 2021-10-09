@@ -17,7 +17,7 @@ class CommandQueue
 public:
 	ComPtr<ID3D12CommandQueue>			GetCommandQueue		() { return _CommandQueue;			}
 	ComPtr<ID3D12CommandAllocator>		GetCommandAllocator	() { return _CommandAllocator;		}
-	ComPtr<ID3D12GraphicsCommandList>	GetCommandList		() { return _CommandList;			}
+	ComPtr<ID3D12GraphicsCommandList>		GetCommandList		() { return _CommandList;			}
 private:
 	// @ 명령 큐, 명령 할당자, 명령 리스트 포인터
 	ComPtr<ID3D12CommandQueue>			_CommandQueue;

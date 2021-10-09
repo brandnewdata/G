@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "Dx12Device.h"
 
 void Dx12Device::Init()

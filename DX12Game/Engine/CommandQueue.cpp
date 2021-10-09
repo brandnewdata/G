@@ -1,4 +1,6 @@
-﻿#include "CommandQueue.h"
+﻿#include "pch.h"
+#include "CommandQueue.h"
+
 
 void CommandQueue::Init(ComPtr<ID3D12Device> device)
 {

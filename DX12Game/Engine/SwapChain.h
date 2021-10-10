@@ -1,4 +1,5 @@
 #pragma once
+#include "pch.h"
 
 class SwapChain
 {
@@ -15,24 +16,20 @@ private:
 
 // Getter, Setter
 public:
-	ComPtr<IDXGISwapChain> GetSwapChain()								const { return _SwapChain; }
+	ComPtr<IDXGISwapChain> GetSwapChain()								const { return _swapChain; }
 
 	ComPtr<ID3D12Resource> GetRTVBufferByIndex(const uint32 rtvIndex)	const { return _rtvBuffer[rtvIndex]; }
 
 	ComPtr<ID3D12Resource> GetBackRTV_Buffer()							const { return _rtvBuffer[_backBufferIndex]; }
 	D3D12_CPU_DESCRIPTOR_HANDLE GetBackRTV_Handle()						const { return _rtvHandle[_backBufferIndex]; }
 
-// 내부에서만 사용하는 const들.
 private:
-	static constexpr uint32 SWAP_CHAIN_BUFFER_COUNT = 2; // 더블 버퍼링을 할 것 이다!
+	ComPtr<IDXGISwapChain>			_swapChain;
 
-private:
-	ComPtr<IDXGISwapChain>			_SwapChain;
-
-	ComPtr<ID3D12Resource>			_rtvBuffer[SWAP_CHAIN_BUFFER_COUNT];	// 렌더 타겟으로 사용할 버퍼 주소배열
+	ComPtr<ID3D12Resource>			_rtvBuffer[ECoreSetting::SWAP_CHAIN_BUFFER_COUNT];	// 렌더 타겟으로 사용할 버퍼 주소배열
 	ComPtr<ID3D12DescriptorHeap>	_rtvDescHeap;							// 추후 설명 추가
 	// cpu에 대한 구조체가 아니라 // cpu측의 rtv Desc에 대한 핸들으로 보인다.
-	D3D12_CPU_DESCRIPTOR_HANDLE		_rtvHandle[SWAP_CHAIN_BUFFER_COUNT];
+	D3D12_CPU_DESCRIPTOR_HANDLE		_rtvHandle[ECoreSetting::SWAP_CHAIN_BUFFER_COUNT];
 
 	uint32							_backBufferIndex = 0;					// 렌더링 대상 버퍼의 인덱스
 };

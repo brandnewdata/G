@@ -44,6 +44,16 @@ using Vec3		= XMFLOAT2;
 using Vec4		= XMFLOAT2;
 using Matrix	= XMMATRIX;
 
+namespace ECoreSetting
+{
+	enum
+	{
+		SWAP_CHAIN_BUFFER_COUNT = 2 // 더블 버퍼링을 할 것 이다!
+	};
+}
+
+
+
 struct WindowInfo
 {
 	HWND	hWnd;		// 출력 윈도우 핸들

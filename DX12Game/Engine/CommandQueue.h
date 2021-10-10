@@ -11,14 +11,14 @@ class CommandQueue
 {
 	// getter, setter
 public:
-	ComPtr<ID3D12CommandQueue>			GetCommandQueue		() { return _CommandQueue;			}
-	ComPtr<ID3D12CommandAllocator>		GetCommandAllocator	() { return _CommandAllocator;		}
-	ComPtr<ID3D12GraphicsCommandList>	GetCommandList		() { return _CommandList;			}
+	ComPtr<ID3D12CommandQueue>			GetCommandQueue		() { return _cmdQueue;			}
+	ComPtr<ID3D12CommandAllocator>		GetCommandAllocator	() { return _cmdAlloc;		}
+	ComPtr<ID3D12GraphicsCommandList>	GetCommandList		() { return _cmdList;			}
 private:
 	// @ 명령 큐, 명령 할당자, 명령 리스트 포인터
-	ComPtr<ID3D12CommandQueue>			_CommandQueue;
-	ComPtr<ID3D12CommandAllocator>		_CommandAllocator;
-	ComPtr<ID3D12GraphicsCommandList>	_CommandList;
+	ComPtr<ID3D12CommandQueue>			_cmdQueue;
+	ComPtr<ID3D12CommandAllocator>		_cmdAlloc;
+	ComPtr<ID3D12GraphicsCommandList>	_cmdList;
 
 	// 펜스 포인터, 펜스 값, 이벤트 핸들
 	ID3D12Fence* _Fence;

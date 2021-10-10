@@ -43,3 +43,12 @@ using Vec2		= XMFLOAT2;
 using Vec3		= XMFLOAT2;
 using Vec4		= XMFLOAT2;
 using Matrix	= XMMATRIX;
+
+struct WindowInfo
+{
+	HWND	hWnd;		// 출력 윈도우 핸들
+	int32	width;		// 출력 화면 너비
+	int32	height;		// 출력 화면 높이
+	bool	bWindowed;	// 창모드인가?
+};
+

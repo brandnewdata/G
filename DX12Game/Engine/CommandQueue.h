@@ -9,23 +9,31 @@
 
 class CommandQueue
 {
+	// 초기화 함수
+public:
+	~CommandQueue();
+
+	void Init(ComPtr<ID3D12Device> device);
+// 렌더링 관리 함수들
+public:
+	void WaitSync();
+	void RenderBegin(const D3D12_VIEWPORT* vp, const D3D12_RECT* rect);
+	void RenderEnd();
+
 	// getter, setter
 public:
-	ComPtr<ID3D12CommandQueue>			GetCommandQueue		() { return _cmdQueue;			}
-	ComPtr<ID3D12CommandAllocator>		GetCommandAllocator	() { return _cmdAlloc;		}
-	ComPtr<ID3D12GraphicsCommandList>	GetCommandList		() { return _cmdList;			}
+	ComPtr<ID3D12CommandQueue>			GetCmdQueue		() { return _cmdQueue;			}
+
 private:
 	// @ 명령 큐, 명령 할당자, 명령 리스트 포인터
 	ComPtr<ID3D12CommandQueue>			_cmdQueue;
 	ComPtr<ID3D12CommandAllocator>		_cmdAlloc;
 	ComPtr<ID3D12GraphicsCommandList>	_cmdList;
 
-	// 펜스 포인터, 펜스 값, 이벤트 핸들
-	ID3D12Fence* _Fence;
-	UINT64		_nFenceValue;
-	HANDLE		_hFenceEvent;
+	// 펜스 포인터, 펜스 값, 이벤트 핸들 // 멀티스레드에서 사용하는 mutex같은 동기화 객체와 유사한 역할
+	ComPtr<ID3D12Fence>					_Fence;
+	uint32								_nFenceValue;
+	HANDLE								_hFenceEvent;
 
-// 초기화 함수
-public:
-	void Init(ComPtr<ID3D12Device> device);
+	shared_ptr<class SwapChain>			_swapChain;
 };
